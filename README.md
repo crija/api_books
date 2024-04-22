@@ -73,7 +73,7 @@ Retorno
 <Response 200>
 ```
  
-# Para deletar um livro (DELETE)
+### Para deletar um livro (DELETE)
 - http://localhost:5000/books/{id}
 
 Exempo de exclusão de um livro
