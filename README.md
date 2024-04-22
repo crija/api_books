@@ -9,7 +9,20 @@ O objetivo dessa api é disponibilizar a consulta, criação, edição e exclus�
 
 Recursos:
 
-No momento a api_books está disponibilizando 3 livros para consulta. Para cada id(livro) que você acessa com o método GET, é retornado o id, nome do autor e o titulo do livro.
+No momento a api_books está disponibilizando 3 livros para consulta. Para cada id(livro) que você acessa com o método GET, é retornado o id, nome do autor e o título do livro.
+
+Exemplo de consulta por id
+```python
+def change_book(id):
+    book = {"author": "Max Fisher", "id": 1, "title": "A máquina do caos"}
+    request = requests.put(f"http://localhost:5000/books/{id}", json=book)
+    print(request)
+    print(request.json())
+```
+
+respota
+
+
 
 Acessar api:
 
