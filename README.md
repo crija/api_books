@@ -83,6 +83,38 @@ Retorno
 <Response 200>
 ```
 
+## Para executar essa API é preciso clonar esse repositório.
+
+Copie a URL do repositório
+
+```git
+https://github.com/crija/api_books.git 
+```
+
+No terminal do rode o seguinte comando
+- Comando do git para clonar e a URL para especificar qual repositório você deseja clonar na sua máquina
+
+```git
+git clone https://github.com/crija/api_books.git
+```
+
+Baixar dependências
+
+1. Instalar o python na verção 3.11.3
+2. Instalar Flask na versção 2.0.1
+
+Com a api na sua máquina e todas as dependências devidamente baixadas, você vai rodar a api com o seguinte comando
+
+```python
+python app.py
+```
+
+Pronto! Agora você está livre para fazer as requisições explicada a cima e fazer as alterações que desejar.
 
 
-Para executar essa API é preciso clonar esse repositório.
+
+
+
+
+
+
