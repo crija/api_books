@@ -109,7 +109,7 @@ Com a api na sua máquina e todas as dependências devidamente baixadas, você v
 python app.py
 ```
 
-Pronto! Agora você está livre para fazer as requisições explicada a cima e fazer as alterações que desejar.
+Pronto! Agora você está livre para fazer consultas e alterações que desejar.
 
 
 
