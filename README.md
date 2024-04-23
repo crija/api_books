@@ -5,10 +5,6 @@
 A api_books foi criada para o armazenamento de livros de sua preferencia, sendo assim, você tem total controle para criar, editar, alterar e/ou excluir livros. 
 - As alterações não são permanentes
 
-### Objetivo
-
-O objetivo dessa api é disponibilizar a consulta, criação, edição e exclusão de livros.
-
 ### Recursos
 
 No momento a api_books está disponibilizando 3 livros para consulta.
