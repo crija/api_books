@@ -58,8 +58,8 @@ Retorno
 Exemplo de criação de um livro
 ```python
 book = {"id": 4, "autor": "Yuval Noah", "title": "Sapiens"}
-criate = requests.post("http://localhost:5000/books", json=book)
-print(criate)
+create = requests.post("http://localhost:5000/books", json=book)
+print(create)
 ```
 
 Retorno
