@@ -50,6 +50,6 @@ def update_book(book_id):
 @books_route.route('/<int:book_id>', methods=['DELETE'])
 def delete_book(book_id):
     for index, book in enumerate(books):
-        if book.get('id') == id:
+        if book.get('id') == book_id:
             del books[index]
     return books
