@@ -5,6 +5,6 @@ from django.db import models
 class Books(models.Model):
     title = models.CharField(max_length=250)
     author = models.CharField(max_length=250)
-    number_of_pages = models.IntegerField(max_length=10, unique=False)
-    year_of_publication = models.IntegerField(max_length=6, unique=False)
+    number_of_pages = models.IntegerField(unique=False)
+    year_of_publication = models.IntegerField(unique=False)
 
