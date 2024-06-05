@@ -16,8 +16,7 @@ from .serializer import BooksSerializer
 def book_list(request):
    if request.method == 'GET':
         books = Books.objects.all()
-
         serializer = BooksSerializer(books, many=True)
         return Response(serializer.data)
 
-  #  return HttpResponse(status=status.HTTP_404_NOT_FOUND)
+   return HttpResponse(status=status.HTTP_404_NOT_FOUND)
