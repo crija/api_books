@@ -12,7 +12,8 @@ from .serializer import BooksSerializer
 
 # Create your views here.
 
-#List books
+# List books - GET
+
 @api_view(['GET'])
 def book_list(request):
    if request.method == 'GET':
@@ -22,7 +23,8 @@ def book_list(request):
 
    return HttpResponse(status=status.HTTP_404_NOT_FOUND)
 
-#creating book - POST
+# Creating book - POST
+
 @api_view(['POST'])
 def create_book(request):
    if request.method == 'POST':
@@ -34,3 +36,21 @@ def create_book(request):
          return Response(serializer.data, status=status.HTTP_201_CREATED)
 
       return Response(status=status.HTTP_400_BAD_REQUEST)
+
+# Edit book - PUT
+
+@api_view(['PUT'])
+def edit_book(request, id):
+   if request.method == 'PUT':
+      update_book = Books.objects.get(pk=id)
+
+      print(request.data)
+
+      serializer = BooksSerializer(update_book, data=request.data)
+
+      if serializer.is_valid():
+         serializer.save()
+         return Response(status=status.HTTP_202_ACCEPTED)
+      
+      return Response(status=status.HTTP_400_BAD_REQUEST)
+      
