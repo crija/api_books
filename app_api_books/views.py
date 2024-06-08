@@ -9,7 +9,6 @@ import json
 from .models import Books
 from .serializer import BooksSerializer
 
-
 # Create your views here.
 
 # List books - GET
@@ -44,8 +43,6 @@ def edit_book(request, id):
    if request.method == 'PUT':
       update_book = Books.objects.get(pk=id)
 
-      print(request.data)
-
       serializer = BooksSerializer(update_book, data=request.data)
 
       if serializer.is_valid():
@@ -54,3 +51,13 @@ def edit_book(request, id):
       
       return Response(status=status.HTTP_400_BAD_REQUEST)
       
+# Delete books - DELETE
+
+@api_view(['DELETE'])
+def delete_book(request, id):
+   if request.method == 'DELETE':
+      delete_book = Books.objects.get(pk=id)
+      delete_book.delete()
+      return Response(status=status.HTTP_202_ACCEPTED)
+   
+   return Response(status=status.HTTP_400_BAD_REQUEST)
