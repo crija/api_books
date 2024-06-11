@@ -6,6 +6,6 @@ from app_api_books import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('books/', include(app_api_books.urls), name= 'books'),
+    path('books', include(app_api_books.urls), name= 'books'),
 ]
 
