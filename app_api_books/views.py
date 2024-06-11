@@ -13,19 +13,16 @@ from .serializer import BooksSerializer
 
 # List books - GET
 
-@api_view(['GET'])
-def book_list(request):
-   if request.method == 'GET':
-        books = Books.objects.all()
-        serializer = BooksSerializer(books, many=True)
-        return Response(serializer.data)
+@api_view(['GET', 'POST'])
+def list_and_criate_books(request):
 
-   return HttpResponse(status=status.HTTP_404_NOT_FOUND)
+   if request.method == 'GET':
+      books = Books.objects.all()
+      serializer = BooksSerializer(books, many=True)
+      return Response(serializer.data)
 
 # Creating book - POST
 
-@api_view(['POST'])
-def create_book(request):
    if request.method == 'POST':
       new_book = request.data
       serializer = BooksSerializer(data=new_book)
@@ -38,8 +35,8 @@ def create_book(request):
 
 # Edit book - PUT
 
-@api_view(['PUT'])
-def edit_book(request, id):
+@api_view(['PUT', 'DELETE'])
+def update_book(request, id):
    if request.method == 'PUT':
       update_book = Books.objects.get(pk=id)
 
@@ -49,12 +46,8 @@ def edit_book(request, id):
          serializer.save()
          return Response(status=status.HTTP_202_ACCEPTED)
       
-      return Response(status=status.HTTP_400_BAD_REQUEST)
-      
 # Delete books - DELETE
 
-@api_view(['DELETE'])
-def delete_book(request, id):
    if request.method == 'DELETE':
       delete_book = Books.objects.get(pk=id)
       delete_book.delete()
