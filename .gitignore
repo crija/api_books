@@ -1,2 +1,4 @@
-test.py
 api_books/__pycache__
+app_api_books/__pycache__
+db.sqlite3
+**__pycache__**
