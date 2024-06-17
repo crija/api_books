@@ -6,6 +6,7 @@ from . import views
 urlpatterns = [
     path('', views.list_and_criate_books, name= 'books'),
     path('/<int:id>', views.update_book, name= 'update_book'),
+    path('/title', views.book_title)
 
 ]
 
