@@ -8,12 +8,6 @@ from rest_framework import status
 from .models import Books
 from .serializer import BooksSerializer
 
-'''# GET book by title
-@api_view(['GET'])
-def book_title(request):
-   if request.method == 'GET':     
-      '''
-
 # GET all books
 @api_view(['GET', 'POST'])
 def get_or_create_books(request):
