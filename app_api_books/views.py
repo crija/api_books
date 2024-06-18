@@ -11,16 +11,16 @@ from .serializer import BooksSerializer
 # GET all books
 @api_view(['GET', 'POST'])
 def get_or_create_books(request):
-   if request.method == 'GET':
-      if request.GET.get('title'):                            
-            title_book = request.GET['title']                
-            title = Books.objects.filter(title=title_book)   
-            serializer = BooksSerializer(title, many=True)   
-            return Response(serializer.data)             
-      else:
-         books = Books.objects.all()
-         serializer = BooksSerializer(books, many=True)
-         return Response(serializer.data)
+   if request.method == 'GET':                          
+      title = request.GET.get('title')
+      author = request.GET.get('author')
+      books = Books.objects.all()
+      if title:
+         books = books.filter(title=title)
+      if author:
+         books = books.filter(author=author)
+      serializer = BooksSerializer(books, many=True)   
+      return Response(serializer.data)
       
 # POST book
    if request.method == 'POST':
